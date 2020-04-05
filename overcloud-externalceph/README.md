@@ -1,12 +1,12 @@
-### Basic Overcloud with blockstorage
+### Overcloud with external ceph
 
 These templeates allow to deploy an environment with the following components:
 
-* customized roles to include external network on computes
-* DVR support
-* Bonding with 2 nics, external non-vlan network attached to the br-ex bridge
+* OVN network with geneve, vlan, flat network types
+* Bonding with 2 nics, external non-vlan network attached to the br-ex bridge on the controller node
 * local storage for the blockstorage node
 * disable telemetry components
-* low memory settings
+* predictable IPs and hostnames
+* integration of external ceph
 
 Note: Include your username and password on the overcloud-images.yaml template to use public registry.

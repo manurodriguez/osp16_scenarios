@@ -13,7 +13,7 @@ Note: Include your username and password on the overcloud-images.yaml template t
 Warning: Initial preparation of nodes are required like creating a user, setting ssh keys and 
 installing the following packages:
 
-** Compute **
+**Compute**
 ```
 certmonger
 iptables
@@ -23,7 +23,7 @@ nftables
 openssh-server
 ```
 
-** Controller **
+**Controller**
 ```
 certmonger
 fence-agents-all

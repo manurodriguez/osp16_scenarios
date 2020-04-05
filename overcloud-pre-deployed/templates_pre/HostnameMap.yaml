@@ -1,0 +1,5 @@
+parameter_defaults:
+  HostnameMap:
+    overcloud-controller-0: overcloud2-ctrl01
+    overcloud-novacompute-0: overcloud2-compute01
+

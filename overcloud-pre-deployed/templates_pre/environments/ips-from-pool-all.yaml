@@ -1,0 +1,79 @@
+resource_registry:
+  OS::TripleO::Controller::Ports::ExternalPort: ../network/ports/external_from_pool.yaml
+  OS::TripleO::Controller::Ports::InternalApiPort: ../network/ports/internal_api_from_pool.yaml
+  OS::TripleO::Controller::Ports::StoragePort: ../network/ports/storage_from_pool.yaml
+  OS::TripleO::Controller::Ports::StorageMgmtPort: ../network/ports/storage_mgmt_from_pool.yaml
+  OS::TripleO::Controller::Ports::TenantPort: ../network/ports/tenant_from_pool.yaml
+  # Management network is optional and disabled by default
+  #OS::TripleO::Controller::Ports::ManagementPort: ../network/ports/management_from_pool.yaml
+
+  OS::TripleO::Compute::Ports::ExternalPort: ../network/ports/noop.yaml
+  OS::TripleO::Compute::Ports::InternalApiPort: ../network/ports/internal_api_from_pool.yaml
+  OS::TripleO::Compute::Ports::StoragePort: ../network/ports/storage_from_pool.yaml
+  OS::TripleO::Compute::Ports::StorageMgmtPort: ../network/ports/noop.yaml
+  OS::TripleO::Compute::Ports::TenantPort: ../network/ports/tenant_from_pool.yaml
+  #OS::TripleO::Compute::Ports::ManagementPort: ../network/ports/management_from_pool.yaml
+
+# Environment file demonstrating how to pre-assign IPs to all node types
+parameter_defaults:
+  ControllerIPs:
+    # Each controller will get an IP from the lists below, first controller, first IP
+    external:
+    - 192.168.0.201
+    - 192.168.0.202
+    - 192.168.0.203
+    internal_api:
+    - 172.17.1.201
+    - 172.17.1.202
+    - 172.17.1.203
+    storage:
+    - 172.17.3.201
+    - 172.17.3.202
+    - 172.17.3.203
+    storage_mgmt:
+    - 172.17.4.201
+    - 172.17.4.202
+    - 172.17.4.203
+    tenant:
+    - 172.17.2.201
+    - 172.17.2.202
+    - 172.17.2.203
+    #management:
+    #management:
+    #- 172.16.4.251
+  ComputeIPs:
+    # Each compute will get an IP from the lists below, first compute, first IP
+    internal_api:
+    - 172.17.1.211
+    - 172.17.1.212
+    storage:
+    - 172.17.3.211
+    - 172.17.3.212
+    tenant:
+    - 172.17.2.211
+    - 172.17.2.212
+    #management:
+    #- 172.16.4.252
+  ObjectStorageIPs:
+    # Each ceph node will get an IP from the lists below, first node, first IP
+    storage:
+    - 172.17.3.221
+    - 172.17.3.222
+    - 172.17.3.223
+    storage_mgmt:
+    - 172.17.4.221
+    - 172.17.4.222
+    - 172.17.4.223
+    internal_api:
+    - 172.17.1.221
+    - 172.17.1.222
+    - 172.17.1.223
+
+### VIPs ###
+
+  ControlFixedIPs: [{'ip_address':'172.16.0.250'}]
+  InternalApiVirtualFixedIPs: [{'ip_address':'172.17.1.150'}]
+  PublicVirtualFixedIPs: [{'ip_address':'192.168.0.150'}]
+  StorageVirtualFixedIPs: [{'ip_address':'172.17.3.150'}]
+  StorageMgmtVirtualFixedIPs: [{'ip_address':'172.17.4.150'}]
+  RedisVirtualFixedIPs: [{'ip_address':'172.17.1.151'}]

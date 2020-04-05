@@ -1,0 +1,14 @@
+parameter_defaults:
+
+  ControllerCount: 3
+  OvercloudControllerFlavor: control
+
+  ComputeCount: 1
+  OvercloudComputeFlavor: compute
+
+  ObjectStorageCount: 1
+  OvercloudObjectStorageFlavor: swift-storage
+
+  # additional settings
+  NovaReservedHostMemory: 1024
+  DockerPuppetProcessCount: 1

@@ -1,0 +1,54 @@
+parameter_defaults:
+  EnableFencing: true
+  FencingConfig:
+    devices:
+    - agent: fence_ipmilan
+      host_mac: 52:54:00:03:bf:7b
+      params:
+        ipaddr: 192.168.1.1
+        ipport: '6233'
+        lanplus: true
+        login: admin
+        passwd: password
+        pcmk_host_list: lab-controller03
+        privlvl: administrator
+    - agent: fence_ipmilan
+      host_mac: 52:54:00:37:f4:db
+      params:
+        ipaddr: 192.168.1.1
+        ipport: '6234'
+        lanplus: true
+        login: admin
+        passwd: password
+        pcmk_host_list: lab-compute01
+        privlvl: administrator
+    - agent: fence_ipmilan
+      host_mac: 52:54:00:f3:76:64
+      params:
+        ipaddr: 192.168.1.1
+        ipport: '6236'
+        lanplus: true
+        login: admin
+        passwd: password
+        pcmk_host_list: lab-swift01
+        privlvl: administrator
+    - agent: fence_ipmilan
+      host_mac: 52:54:00:3b:3f:98
+      params:
+        ipaddr: 192.168.1.1
+        ipport: '6232'
+        lanplus: true
+        login: admin
+        passwd: password
+        pcmk_host_list: lab-controller02
+        privlvl: administrator
+    - agent: fence_ipmilan
+      host_mac: 52:54:00:24:5c:b6
+      params:
+        ipaddr: 192.168.1.1
+        ipport: '6231'
+        lanplus: true
+        login: admin
+        passwd: password
+        pcmk_host_list: lab-controller01
+        privlvl: administrator

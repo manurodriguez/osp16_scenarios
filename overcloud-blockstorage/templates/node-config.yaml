@@ -1,0 +1,7 @@
+parameter_defaults:
+  OvercloudControlFlavor: control
+  OvercloudComputeDVRFlavor: compute
+  OvercloudObjectStorageFlavor: swift-storage
+  ControllerCount: 1
+  ComputeDVRCount: 2
+  ObjectStorageCount: 1

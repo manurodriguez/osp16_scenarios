@@ -1,0 +1,8 @@
+parameter_defaults:
+  HostnameMap:
+    overcloud-controller-0: lab-controller01
+    overcloud-controller-1: lab-controller02
+    overcloud-controller-2: lab-controller03
+    overcloud-novacompute-0: lab-compute01
+    overcloud-objectstorage-0: lab-swift01
+

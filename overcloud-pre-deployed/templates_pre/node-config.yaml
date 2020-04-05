@@ -1,0 +1,10 @@
+parameter_defaults:
+  ControllerDeployedServerCount: 1
+  OvercloudControllerDeployedServerFlavor: control
+
+  ComputeDeployedServerCount: 1
+  OvercloudComputeDeployedServerFlavor: compute
+
+  NovaReservedHostMemory: 1024
+  DockerPuppetProcessCount: 1
+  DockerPuppetDebug: 'True'
